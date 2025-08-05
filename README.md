@@ -1,5 +1,7 @@
-# hellcard-modding-reference
+# Hellcard Modding References
 A collection of Hellcard modding references.
+
+Have a look at the official [Hellcard Mod Support Github](https://github.com/ThingTrunkOfficial/hellcard-mod-support).
 
 ## AngelScript Influences
 ### Influence 001: character_influence_master.as
