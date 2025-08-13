@@ -1,0 +1,68 @@
+## BCCGProjectileCardBlock
+- Spawns the chosen projectile at the source with the chosen parameters
+  - Receivers
+    - set targets for the projectile (default is targets)
+      - spawns a projectile for each target
+  - Missile
+    - Type (TODO: link to types)
+    - Level 
+      - (dont know)
+    - Effect: Knock
+      - Adds knock effect
+    - Effect: Fear
+      - Adds fear effect
+    - Effect: Intuition
+      - Adds intuition effect
+    - Particle effect only
+      - If true the chosen projectile will not be shown, instead only the selected particle effect is used
+    - Particle effect path
+      - Path to a existing particle effect or one you made yourself
+      - can be used with particle effects only to make your own projectiles
+    - Direction
+      - only affects the projectile when curve width range is not 0
+      - indicates to which direction the projectile curves
+      - clockwise, random, counter clockwise
+    - Speed range
+      - sets the speed of the projectile
+      - only the larger value is relevant i guess
+      - default is 500
+    - Curve width range
+      - lets the projectile fly in a curve not a straight line
+      - sets the range of the curve, larger values = larger curve
+      - 1.00 is already high 
+      - both values have to be the same
+  - Effects on source
+    - BCCGActionFX~ blocks can be added. More on them below.
+  - Blocks on hit
+    - Blocks to execute when target is hit
+
+## Projectile Missile Types: (TODO: add videos or gifs)
+- Arrow fire
+- Arrow ice
+- Arrow poison
+- Arrow epic 
+- Mage 
+- Ice bolt
+- Fire bolt
+- Poison bolt
+- Holy bolt
+- Stun bolt
+- Axe arrow
+- Bounce ice_orb
+- Arcane fire
+- Arcane ice
+- Arcane turning
+- Arcane bolt
+- Arcane fire_arch
+- Arcane poison
+- Telp fire
+- Telp ice
+- Telp poison 
+- Player poison bolt
+- Arcane black bolt
+- Bounce fire orb
+- Bullet
+- Dagger
+- Web
+- Quarrel
+- Bruja

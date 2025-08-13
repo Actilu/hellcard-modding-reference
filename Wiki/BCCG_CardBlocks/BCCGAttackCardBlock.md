@@ -1,0 +1,11 @@
+## BCCGAttackCardBlock
+- Character does a little animation towards the targets
+- Receivers
+    - does not matter for the animation
+    - (changes the origin for following card blocks?)
+- Speed multiplier
+    - Changes the speed of the animation (default is 2)
+- Effects on source
+    - BCCGActionFX~ blocks can be added. More on them below.
+- Blocks on peak
+    - Blocks to execute when animation is on peak

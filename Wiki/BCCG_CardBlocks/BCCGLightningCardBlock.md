@@ -1,0 +1,33 @@
+## BCCGLightningCardBlock
+- Spawns a lightning effect between the source and the targets
+  - Receivers
+    - set targets for the projectile (default is targets)
+      - spawns a projectile for each target
+  - Preset
+  - Bend min 
+    - how much the effect is bend minimal (default is 0.1)
+    - relative to lighning length
+  - bend max
+    - how much the effect is bend maximal (default is 0.4)
+    - relative to lighning length
+  - Source anchor relative height
+    - point above source from where the lighning starts
+    - 1 is around the height of the source (default is 0.75)
+  - Target anchor relative height
+    - point above target from where the lighning ends
+    - 1 is around the height of the target (default is 0.75)
+
+## Lightning Presets: (TODO: add videos or gifs)
+- Mass dispell
+- Urn heal
+- Urn crush
+- Disarmor
+- Hell obelisk
+- Teleport others
+- Antipope
+- hell gate
+- Antipope dispate
+- Hell dispate
+- Rune fusion
+- Discharge
+- Mana burn

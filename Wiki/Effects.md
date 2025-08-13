@@ -1,0 +1,241 @@
+## Effect Card Blocks:
+- BCCGAttackCardBlock
+  - Character does a little animation towards the targets
+
+- BCCGDelayCardBlock
+  - delays blocks by Min-max delay
+
+- BCCGHighlightTargetsCardBlock
+  - used to enable or disable highlight/outline targets or sections
+
+- BCCGLightningCardBlock
+  - Spawns a lightning effect between the source and the targets
+
+- BCCGProjectileCardBlock
+  - Spawns the chosen projectile at the source with the chosen parameters
+
+- BCCGCardBlockBase / BCCGSimpleFXCardBlock
+  - Effects/ActionFX can be added to:
+    - Effects on source
+    - Effects on target
+    - Effects on target position
+    - Effects on target direction
+    - Effects on origin
+
+## Effects on ~ - ActionFX:
+- HierEffectTrackingInfluence TODO
+  - Particle Path (Front)
+  - Particle Path (Back)
+- Meteor
+  - Object type
+    - Regular = BoD meteor
+      - red smaller sphere coming from an angle
+    - Custom = Rock falling from above
+      - big black boulder coming from stright above
+  - Generate shockwave
+    - enable or disable shockwave when meteor hits same as ActionFXShockwave
+  - Shockwave Size
+  - Custom shockwave size
+    - 250 = Small
+    - 350 = Medium
+    - 800 = Huge
+  - Shockwave Element
+    - Normal, Fire, Ice, Poison
+    - effects the color of the shockwave
+  - Speed Modifier
+    - Resulting speed is a speed of Shockwave Element + Speed Modifier
+    - 1000 is maybe double?
+- Decal
+  - Places a decal/effect/sprite on the floor
+    - Decal Preset
+      - Blood
+      - Poison
+      - Crater
+      - Cater Big
+      - Ice
+      - Ice Big
+      - Icicle
+      - Icicle Small
+      - Icicle Medium
+      - Mud Small
+    - Effect Time
+      - default is 10 seconds than starts fading
+    - Floor test
+      - if true, only spawn effect if it will be on the floor
+    - Quick Disappear
+      - if true, fading effect is faster
+    - Delay
+      - delays effect by x seconds
+- Sound
+  - plays a sound thats given by path
+    - Sound Path
+    - Sound Volume
+    - Sound Pitch
+    - Sound Priority
+- ColdGrasp
+  - needs to be placed on a position (BCCGSimpleFXCardBlock >  target position)
+    - Hands per monster
+      - int x, int y (default on bruja cards = 5,7)
+        - x has to be the same or smaller than y, otherwise the game crashes
+        - seems to have a cap at around 10?
+        - dont know what x does
+        - y is the number of hands coming from the ground around each monster
+    - Random hands
+      - default on bruja cards is 0.1, 0.2
+    - Alive time
+      - time of the effect in seconds (default on bruja cards = 2)
+    - Radius
+      - Small, Medium, Large
+    - Circle color
+      - Color of the outlining circle
+      - alpha = 0 makes circle invisible
+      - default on bruja cards is 140,45,64 alpha=0
+    - Light color
+      - default on bruja cards is 188,99,170 alpha=255
+    - Delay
+      - delays effect by x seconds
+- Projectile
+  - same as BCCGProjectileCardBlock
+- Swist
+  - strike/swist effect
+    - Swist look
+      - changes params to a predefined state
+    - Element look
+    - Sprite id
+      - you can change the sprite id, but i dont know yet which sprite assets its using
+    - Sprite color
+    - Colorize color
+    - Colorize mode
+    - Width start-end
+      - width of the effect start, end
+    - Trigger hit effects
+    - Particle effect path
+- Avalange
+  - turns screen dark, shakes dungeon, falling rocks and a shockwave
+    - Type
+      - Regular = shockwave + screenshake + rocks all over dungeon
+      - Rock = blood decal + small stomes on target
+      - Arch = regular with fade
+    - Generate shockwave
+      - enables/disables shockwave
+      - Shockwave Size, Custom shockwave size, Shockwave Element, Speed Modifier -> same as ActionFXShockwave
+    - Generate fade
+      - enables/diables fade
+      - Fade In Time
+      - Fade Out Time
+      - Fade Strength
+        - 1 = strong
+        - 0 = no fade
+    - Delay
+      - delays effect by x seconds
+- GroundShake
+  - shakes ground/dungeon and falling rock visuals
+    - Shake Time
+      - in seconds
+    - Delay
+      - delays effect by x seconds
+- Light
+  - lights up area (sometimes hard to see, try in darker areas)
+    - Size
+    - Fade-in duration
+    - Duration
+    - Fade-out duration
+    - Color
+    - Mode
+    - Follow
+      - if true, follows an onject the light is spawned on.
+    - Die with followed
+      - also gets removed, when object gets removed
+    - Delay
+      - delays effect by x seconds
+- Group
+  - Groups actions for more clarity like BCCGGroupCardBlock
+- Mover
+  - Add different effects to target like scaling
+    - Mover Type
+      - Jump Float
+        - lets target jump and float
+      - Leg Stomp
+        - ?
+      - Bleat
+        - when used on heroes: moves head down and up
+      - Monster Cast
+        - similar to jump float but target smoothly wobbles in air like held by a force
+      - XY Scale
+        - scales target size larger or smaller
+      - Directional Fade
+        - fades target slowly out or in, useful for moving things?
+      - Jump
+        - Lets target jump with wobble effect when landing
+      - Kangaroo Jump
+        - same as Jump but without wobble effect
+      - Smash
+        - same as jump butz without wobble and fast downword movement
+      - Rotate
+        - rotates target value 16=360degree
+      - Fall down
+        - Lifts target up and tilts it to the right/left 90 degree and lets it fall down
+      - Accel
+        - moves target up (default) or if you change value like a vector, in any direction you like
+      - Fade
+        - same as directional fade but without the possibility to change the direction
+      - Colorize
+        - change color of target including the alpha value
+      - Monster Shake
+        - shakes the monster, gets stronger with time
+      - Jump Flex
+        - squish/bounce effect on target
+      - Transparent
+        - makes target transparent
+    - All effects end when duration is over
+    - If duration is -1 effects stay for ever
+    - Delay
+      - delays effect by x seconds
+- BodSound
+  - same as Sound but you can choose from existing sounds
+- Particle
+  - spawns particles from a file path
+    - Particle Path
+    - Follow
+      - particle follows target
+    - Front
+      - if particle should be in front or behind object
+    - On Floor
+      - if particle should be on the floor or on top of everything else
+    - Force spawn at center
+      - if true spawns particle in dungeon center
+    - Y offset
+    - Delay
+      - delays effect by x seconds
+- Shockwave
+  - spawns a shockwave around the target
+    - Shockwave Element
+      - Normal, Fire, Ice, Poison
+      - changes mostly the color
+    - Shockwave Size
+      - If Custom only Size Modifier counts
+    - Size Modifier
+      - Shockwave Size + Size Modifier = Size
+    - Speed Modifier
+      - Element + Speed Modifier = speed
+    - Collision Test
+      - dont know
+    - Delay
+      - delays effect by x seconds
+- VolumeLight
+  - Spotlight at target its like a cone
+    - Fade In Time
+    - Fade Out Time
+    - Keep time
+      - time in seconds effect stays
+    - Color
+    - Scale
+      - scales whole effect by x
+    - Inverted
+      - cone is upside down
+    - Die With Object
+      - gets removed when target dies
+    - Test Collision
+      - dont know
+    - Delay
+      - delays effect by x seconds
