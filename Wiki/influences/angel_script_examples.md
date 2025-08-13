@@ -1,6 +1,6 @@
 Here you can find AngelScript References I made for use in Hellcard Modding.
 
-# [Influence 001: character_influence_master.as](https://github.com/LudgerHennersdorf/hellcard-modding-reference/wiki/Infuence-001:-character_influence_master.as)
+# [Influence 001: character_influence_master.as](https://github.com/Actilu/hellcard-modding-reference/blob/main/influence_references/character_influence_master.as)
   - This influence should be added to a character `starter` artifact as `BCCGInfluencePushBehaviour`.
   - It will be invisible and controls other influences and interactions with specific cards.
 
