@@ -223,7 +223,7 @@
     - Delay
       - delays effect by x seconds
 - VolumeLight
-  - Spotlight at target its like a cone
+  - Spotlight at target, its like a cone
     - Fade In Time
     - Fade Out Time
     - Keep time
