@@ -107,3 +107,19 @@ void BeginExecute(BCCGInfluenceExecuteContext@ context, BCCGInfluenceInstanceBas
     influence.ForceRemove();
 }
 ```
+
+## Drawing a card by script
+
+What we need:
+1. Influence that holds your script and logic - `test_draw_master`
+   - Needs to be present and controls the other influence. (mine is invisible)
+   - I will push it with a card action. (`card_test_draw_master`)
+   - It pushes the second influence for the first time.
+   - Controls when to draw the card.
+     - In this example when playing a card with the `draw_card` tag.
+2. Influence that draws card for us when pushed beyond the first time. - `test_draw_card_engine_transmission_belt`
+   - Class Name: `BCCGTransmissionBeltInfluence`
+   - Tag and Contraption Tag Param must be the same
+
+To activate the influence and draw a card I just play a card with the chosen tag and the master influence pushes the transmission belt and it then drwas a card.
+
